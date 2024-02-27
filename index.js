@@ -1,8 +1,12 @@
 
 const express = require('express');
 require('dotenv').config();
-//console.log(process.env),para ver las variables de entorno y procesos que se estan ejecutando
+//console.log(process.env), para ver las variables de entorno y revisar que se esten tomando correctamente.
 
+
+//Base de datos
+const { dbConnect } = require('./database/config');
+dbConnect();
 
 //Crear servidor de express
 const app = express();
