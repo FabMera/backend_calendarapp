@@ -1,15 +1,19 @@
-
+const { dbConnect } = require('./database/config');
 const express = require('express');
 require('dotenv').config();
+const cors = require('cors');
+
 //console.log(process.env), para ver las variables de entorno y revisar que se esten tomando correctamente.
-
-
-//Base de datos
-const { dbConnect } = require('./database/config');
-dbConnect();
 
 //Crear servidor de express
 const app = express();
+
+//Base de datos
+
+dbConnect();
+
+//CORS
+app.use(cors())
 
 
 //Middlewares (funciones que se ejecutan cuando se levanta el servidor),directorio publico
